@@ -1,5 +1,5 @@
-const express = require('express');
-const routes = require('./routes');
+import express from 'express'; 
+import routes from './routes';
 
 
 class App {
@@ -20,5 +20,9 @@ class App {
   }
 
 }
-
-module.exports = new App().server;
+// quado usa sucrase troca para
+export default new App().server;
+// module.exports = new App().server;
+// depois de mudar para import as coisas se tentar rodar com o node nao funciona
+// então precisa rodar com sucrase
+// $ yarn sucrase-node src/server.js
