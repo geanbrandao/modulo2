@@ -23,3 +23,64 @@ No arquivo nodemon.json usa essa estrutura para registrar o sucrase para todos o
   }
 }
 ```
+
+quando usa o sucrase o processo de debug muda um pouco tambem precisa adicionar comandos no package.json
+```
+"scripts": {
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --inspect src/server.js"
+},
+```
+
+Comando que cria um servico de banco de dados postgres
+
+$ docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+
+Lista os containers que estão em execução
+$ docker ps
+
+Para a database de forma brusca
+$ docker stop database
+
+Lista todos os containers que tem na maquina mesmo os que nao estao rodando
+$ docker ps -a
+
+Para executar o docker. database é o nome
+$ docker start database
+
+Para listar todos os logs da database
+$ docker logs database
+
+Para adicionar o eslint ao codigo. Verifica os padroes de codigo
+$ yarn add eslint -D
+
+depois de selecionar as opcoes vai criar um arquivo package-lock.json, pois faz a instalacao da dependencias com o npm.
+Então se exclui esse arquivo e roda $ yarn no prompt.
+Assim ele faz o mapeamento das dependencias.
+Precisa fazer algumas configuracoes no arquivo setting.json e adiconar algumas rules no arquivo que é gerado eslintrc.js
+
+
+Para deixar o codigo mais bonito usa
+$ yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+depois configura mais umas coisas no .eslintrc.js
+
+$ yarn eslint --fiz src --ext .js
+Usa esse comando para arrumar todos os erros dos arquivos de uma pasta
+
+precisa criar o editorconfig com o botao direito na raiz do projeto
+
+$ yarn add sequelize
+$ yarn add sequelize-cli -D
+
+para criar a migração. Usada para criar a tabela de usuarios
+$ yarn sequelize migration:create --name=create-user
+
+para rodar a migration
+$ yarn sequelize db:migrate
+
+para desfazer uma migration
+$ yarn sequelize db:migrate:undo
+
+para desfazer todas migration
+$ yarn sequelize db:migrate:undo:all

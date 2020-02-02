@@ -1,6 +1,7 @@
-import express from 'express'; 
+import express from 'express';
 import routes from './routes';
 
+import './database';
 
 class App {
   constructor() {
@@ -8,7 +9,6 @@ class App {
 
     this.middlewares();
     this.routes();
-
   }
 
   middlewares() {
@@ -18,8 +18,8 @@ class App {
   routes() {
     this.server.use(routes);
   }
-
 }
+
 // quado usa sucrase troca para
 export default new App().server;
 // module.exports = new App().server;
