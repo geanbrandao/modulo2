@@ -84,3 +84,8 @@ $ yarn sequelize db:migrate:undo
 
 para desfazer todas migration
 $ yarn sequelize db:migrate:undo:all
+
+para criptografar a senha adicinar a dependencia
+$ yarn add bcryptjs
+
+
