@@ -88,4 +88,5 @@ $ yarn sequelize db:migrate:undo:all
 para criptografar a senha adicinar a dependencia
 $ yarn add bcryptjs
 
-
+adicionando a parte do token
+$ yarn add jsonwebtoken
